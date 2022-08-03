@@ -3,7 +3,7 @@
 @php use App\Models\Polls; @endphp
 @section('content')
 
-@if ( (session()->has('name')) && (session()->get('email')=="vasanth.k08@gmail.com") )
+@if ( (session()->has('name')) && (session()->get('email')==config("sets.superAdmin.email")) )
 
 <div class='d-flex flex-wrap p-3'>
 
