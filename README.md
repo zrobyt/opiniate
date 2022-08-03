@@ -1,4 +1,4 @@
-<img src='/opiniate.png'/>
+<img src='https://opiniate.in/opiniate.png'/>
 <br>
 Opinion Polling application build on Laravel Framework
 </br>
