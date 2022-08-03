@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\getData;
 use App\Http\Controllers\putData;
 
+
 Route::middleware([Seedr::class,])->group(function () {
         Route::get('/', [getData::class, 'viewHome'])->name('home');
         Route::view('/signin', 'signin')->name('signin');
