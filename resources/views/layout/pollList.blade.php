@@ -1,6 +1,7 @@
 @php
 use Coduo\PHPHumanizer\NumberHumanizer;
 use WebThumbnailer\WebThumbnailer;
+use App\Helpers\Math;
 @endphp
 <ul class='list-unstyled d-flex justify-content-start flex-wrap'>
     @foreach($polls as $poll)
@@ -25,12 +26,12 @@ use WebThumbnailer\WebThumbnailer;
                                 Total votes :
                                 <span class='text-success'>
                                     @php
-                                    echo ((new \App\Http\Controllers\Votes($poll))->totalVotes);
+                                    echo Math::readable((new \App\Http\Controllers\Votes($poll))->totalVotes);
                                     @endphp
                                 </span>
                             </div>
                             <div class='d-inline-block float-end me-1'>
-                                Views : <span class='text-success'> {{ ($poll->views) }}</span>
+                                Views : <span class='text-success'> {{ Math::readable($poll->views) }}</span>
                             </div>
                         </div>
                     </div>

@@ -11,7 +11,7 @@ $mlist = [
 "General"=>[
 "Home"=>"/",
 "Recent"=>"/recent",
-"Trending"=>"/trending"
+"Trending"=>"/trending",
 ],
 "Languages"=>array_combine(Polls::languages(),array_map(function($v){return "/language/".$v;} , Polls::languages())),
 "Categories"=>array_combine(Polls::categories(),array_map(function($v){return "/category/".$v;} , Polls::categories())),
@@ -25,7 +25,20 @@ $mlist = [
 
 if (session()->has('name'))
 {
-  $mlist['General'] = array_merge($mlist['General'],["Profile"=>"/profile","SignOut"=>"/signout"]);
+  $mlist['General'] = array_merge($mlist['General'],["Profile"=>"/profile"]);
+
+  if (session()->get('email')==config("sets.superAdmin.email"))
+  {
+    $mlist['General'] = array_merge($mlist['General'],["Poll Maker"=>"/polls"]);
+  }
+
+}
+
+$mlist['General'] = array_merge($mlist['General'],['Privacy Policy'=>'/privacy','Android App'=>'https://play.google.com/store/apps/details?id=in.opiniate.www']);
+
+if (session()->has('name'))
+{
+  $mlist['General'] = array_merge($mlist['General'],["SignOut"=>"/signout"]);
 }
 
 @endphp

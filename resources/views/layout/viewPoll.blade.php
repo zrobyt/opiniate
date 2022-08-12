@@ -3,6 +3,7 @@ use Coduo\PHPHumanizer\NumberHumanizer;
 use App\Models\Gusers;
 use App\Models\Polls;
 use App\Http\Controllers\getData;
+use App\Helpers\Math;
 
 use WebThumbnailer\WebThumbnailer;
 
@@ -20,7 +21,7 @@ $tv = (new App\Http\Controllers\Votes($poll))->totalVotes;
         <div>
             Created <span class='text-muted'>{{ $poll->created_at->diffForHumans() }}</span>
             @php echo str_repeat('&nbsp;',15); @endphp
-            Views : <span class='text-muted'>{{ ($poll->views) }}</span>
+            Views : <span class='text-muted'>{{ Math::readable($poll->views) }}</span>
         </div>
 
         <div>Status : <span class='text-{{ ($poll->status=="open")? "success":"danger" }}'>{{ ucfirst($poll->status) }}</span>
@@ -31,7 +32,7 @@ $tv = (new App\Http\Controllers\Votes($poll))->totalVotes;
         <div class='w-100'>
             Votes cast till now :
             <span class='text-muted'>
-                {{ ($tv) }}
+                {{ Math::readable($tv) }}
             </span>
         </div>
 

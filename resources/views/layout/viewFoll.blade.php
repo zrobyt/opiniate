@@ -2,15 +2,16 @@
     @php
     use App\Models\Follow;
     use App\Models\Gusers;
+    use App\Helpers\Math;
     $flors = Follow::where('fid',(int)($id));
     $flngs = Follow::where('uid',(int)($id));
     @endphp
 
     <div class='float-start w-50' onclick='$(this).siblings(".flors").toggle(400);$(this).siblings(".flngs").hide(400);$(this).next().children().removeClass("text-success").addClass("text-muted");if($(this).children().hasClass("text-muted")){$(this).children().removeClass("text-muted").addClass("text-success");}else{$(this).children().addClass("text-muted").removeClass("text-success");}'>
-        <span class='fw-bold text-success' style='cursor:pointer;'>Followers</span> : {{ $flors->get()->count() }}
+        <span class='fw-bold text-success' style='cursor:pointer;'>Followers</span> : {{ Math::readable($flors->get()->count()) }}
     </div>
     <div class='float-end w-50 text-end' onclick='$(this).siblings(".flngs").toggle(400);$(this).siblings(".flors").hide(400);$(this).prev().children().removeClass("text-success").addClass("text-muted");if($(this).children().hasClass("text-muted")){$(this).children().removeClass("text-muted").addClass("text-success");}else{$(this).children().addClass("text-muted").removeClass("text-success");}'>
-        <span class='fw-bold text-muted' style='cursor:pointer;'>Following</span> : {{ $flngs->get()->count() }}
+        <span class='fw-bold text-muted' style='cursor:pointer;'>Following</span> : {{ Math::readable($flngs->get()->count()) }}
     </div>
 
     <div class='flors w-100 overflow-hidden' style='display:flex;'>

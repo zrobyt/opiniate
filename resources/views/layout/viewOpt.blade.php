@@ -1,6 +1,7 @@
 @php
 use App\Models\Gusers;
 use App\Models\Polls;
+use App\Helpers\Math;
 $poll = Polls::find($id);
 $tv = (new App\Http\Controllers\Votes($poll))->totalVotes;
 @endphp
@@ -22,7 +23,7 @@ $tv = (new App\Http\Controllers\Votes($poll))->totalVotes;
                     Vote
                 </span>
                 <span class='poVotes float-end text-light fst-italic small' style='cursor:pointer;'>
-                    {{ ($option->count) }} votes
+                    {{ Math::readable($option->count) }} votes
                 </span>
             </div>
         </div>

@@ -4,6 +4,7 @@ use App\Models\Polls;
 use App\Models\UserVotes;
 use App\Models\Follow;
 use Coduo\PHPHumanizer\NumberHumanizer;
+use App\Helpers\Math;
 
 $guser = Gusers::where("id",$id)->get()->first();
 $userVotes = UserVotes::where("uid",$id)->get();
@@ -35,8 +36,8 @@ arsort($intr);
                 </div>
                 <br>
                 <div class='d-inline-block align-bottom text-truncate fs-6 text-muted fw-bold ps-3 pt-3' style='width:69%;'>
-                    <div>Bio : {{ $guser->bio }}</div>
-                    <div>Votes : {{ $guser->votes }}</div>
+                    <div>Status : {{ $guser->bio }}</div>
+                    <div>Votes : {{ Math::readable($guser->votes) }}</div>
                 </div>
 
             </div>

@@ -7,6 +7,7 @@ use App\Models\Polls;
 use App\Models\Gusers;
 use App\Models\UserVotes;
 use App\Models\Follow;
+use Illuminate\Support\Facades\Cookie;
 
 class putData extends Controller
 {
@@ -142,6 +143,13 @@ class putData extends Controller
         session()->put('id',$usr->id);
 
         return json_encode(["status" => "success"]);
+    }
+
+    public static function signOut()
+    {
+        Cookie::queue(Cookie::forget('laravel_token'));
+        Cookie::queue(Cookie::forget('laravel_session'));
+        return redirect()->route('home');
     }
 
     public static function followUser(Request $req)

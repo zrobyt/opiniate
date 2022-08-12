@@ -47,8 +47,7 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
     <!-- Google Adsense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7783879415436265"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7783879415436265" crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <style>
@@ -533,9 +532,10 @@
 
     <div class='w-100'>
 
+        <!-- Horizontal -->
+        <!-- 
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7783879415436265"
         crossorigin="anonymous"></script>
-        <!-- Horizontal -->
         <ins class="adsbygoogle"
         style="display:block"
         data-ad-client="ca-pub-7783879415436265"
@@ -544,7 +544,8 @@
         data-full-width-responsive="true"></ins>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        </script> 
+    -->
 
         <div class='d-inline-block w-100 p-2 p-lg-3'>
             @yield('content')

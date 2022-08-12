@@ -19,7 +19,7 @@ use App\Http\Controllers\putData;
 
 Route::middleware([Seedr::class,])->group(function () {
         Route::get('/', [getData::class, 'viewHome'])->name('home');
-        Route::view('/signin', 'signin')->name('signin');
+        Route::get('/signout', [putData::class, 'signOut'])->name('signout');
         Route::get('/tag/{filter?}', [getData::class, 'viewFilter'])->name('tags');
         Route::get('/place/{filter?}', [getData::class, 'viewFilter'])->name('loca');
         Route::get('/language/{filter?}', [getData::class, 'viewFilter'])->name('language');
@@ -27,6 +27,7 @@ Route::middleware([Seedr::class,])->group(function () {
         Route::get('/year/{filter?}', [getData::class, 'viewFilter'])->name('year');
         Route::get('/trending', [getData::class, 'viewTrending'])->name('trending');
         Route::get('/recent', [getData::class, 'viewRecent'])->name('recent');
+        Route::view('/privacy','privacy');
 });
 
 Route::get('/polls/{id?}', [getData::class, 'viewPoll'])
