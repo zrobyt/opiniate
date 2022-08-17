@@ -45,16 +45,6 @@ $uv = UserVotes::latest()->limit(6)->get();
 </div>
 @endif
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7783879415436265" crossorigin="anonymous"></script>
-<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-hx-1+b-4p+91" data-ad-client="ca-pub-7783879415436265" data-ad-slot="1235462295"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-
-
-
 @foreach( $topics as $k=>$v)
 <div class='p-1'>
     <div class='text-muted fs-5 p-2 w-100'>

@@ -96,18 +96,6 @@ $tv = (new App\Http\Controllers\Votes($poll))->totalVotes;
         </div>
     </div>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7783879415436265"
-     crossorigin="anonymous"></script>
-    <ins class="adsbygoogle"
-        style="display:block; text-align:center;"
-        data-ad-layout="in-article"
-        data-ad-format="fluid"
-        data-ad-client="ca-pub-7783879415436265"
-        data-ad-slot="5338358831"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
     <div>
         <hr>
         <div class='fw-bold mt-4 mb-3 '>Opinions : </div>

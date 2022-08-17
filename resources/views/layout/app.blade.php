@@ -27,6 +27,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -531,21 +532,6 @@
     </div>
 
     <div class='w-100'>
-
-        <!-- Horizontal -->
-        <!-- 
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7783879415436265"
-        crossorigin="anonymous"></script>
-        <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-7783879415436265"
-        data-ad-slot="4786311609"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script> 
-    -->
 
         <div class='d-inline-block w-100 p-2 p-lg-3'>
             @yield('content')
